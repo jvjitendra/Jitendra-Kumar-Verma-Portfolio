@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #000000;
+  --color-canvas-subtle: #050507;
+  --color-canvas-card: #0A0A0E;
+  --color-canvas-glass: rgba(18, 18, 24, 0.65);
+  --color-border-glass: rgba(255, 255, 255, 0.07);
+  --color-border-glass-hover: rgba(229, 195, 120, 0.35);
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #D1D5DB;
+  --color-text-muted: #717684;
+
+  /* Executive Warm Titanium & Amber Glow */
+  --color-accent-gold: #E5C378;
+  --color-accent-amber: #F59E0B;
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  background-color: #000000;
+  color: #FFFFFF;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Linear / Apple style Frosted Glass Panels */
+.glass-panel {
+  background: rgba(12, 12, 16, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-panel:hover {
+  border-color: rgba(229, 195, 120, 0.25);
+}
+
+.glass-card {
+  background: rgba(18, 18, 24, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Premium Button Shine & Glow */
+.btn-primary {
+  background: #E5C378;
+  color: #000000;
+  font-weight: 700;
+  box-shadow: 0 0 25px -4px rgba(229, 195, 120, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  background: #F0D08A;
+  box-shadow: 0 0 35px -2px rgba(229, 195, 120, 0.55);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+/* Subtle modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A1A22;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2D2D3A;
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+*:focus-visible {
+  outline: 2px solid #E5C378;
+  outline-offset: 2px;
+}
