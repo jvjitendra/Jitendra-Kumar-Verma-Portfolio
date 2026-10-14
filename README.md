@@ -73,7 +73,7 @@ A product-oriented exploration of bringing conversational, research, voice, file
 
 **Focus:** Product thinking · Interface design · Frontend integration · Backend services · AI integration
 
-🔗 [Repository](https://github.com/jvjitendra/vaani-ai-workspace) · [Project site](https://vaani-ai-workspace.vercel.app)
+🔗 [Repository](https://github.com/jvjitendra/vaani-ai-workspace) · [Project site](https://vaani-ai-workspace-frontend.vercel.app/)
 
 ## 🎓 College Projects & Fundamentals
 
