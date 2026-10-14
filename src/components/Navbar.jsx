@@ -16,47 +16,44 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Featured', href: '#projects' },
-    { name: 'Case Studies', href: '#case-studies' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Journey', href: '#journey' },
     { name: 'Education', href: '#education' },
-    { name: 'Archive', href: '#archive' },
     { name: 'Beyond Code', href: '#beyond-code' },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
           ? 'bg-black/85 backdrop-blur-xl border-b border-white/[0.06] py-3.5 shadow-2xl'
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo / Full Name (Jitendra Kumar Verma) */}
+          {/* Logo / Full Name */}
           <a
             href="#"
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="Jitendra Kumar Verma Home"
           >
-            <div className="w-9 h-9 rounded-xl bg-white/[0.05] border border-white/[0.1] flex items-center justify-center font-mono font-bold text-xs text-[#E5C378] group-hover:border-[#E5C378]/50 group-hover:scale-105 transition-all shadow-inner">
+            <div className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.1] flex items-center justify-center font-mono font-bold text-xs text-[#E5C378] group-hover:border-[#E5C378]/50 group-hover:scale-105 transition-all">
               JV
             </div>
             <div className="flex flex-col text-left">
               <span className="font-bold text-sm tracking-tight text-white group-hover:text-[#E5C378] transition-colors">
                 Jitendra Kumar Verma
               </span>
-              <span className="text-[11px] font-mono text-zinc-500 tracking-wider uppercase">
+              <span className="text-[10px] font-mono text-zinc-500 tracking-wider uppercase">
                 Software Engineer
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation - Frosted Glass Pill */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] backdrop-blur-md border border-white/[0.06] rounded-full px-4 py-1.5 shadow-2xl">
+          {/* Desktop Navigation - 4 clean links */}
+          <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] backdrop-blur-md border border-white/[0.06] rounded-full px-3.5 py-1.5 shadow-xl">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -68,13 +65,13 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Quick Actions & Socials */}
+          {/* Quick Actions */}
           <div className="hidden md:flex items-center gap-2.5">
             <a
               href={PERSONAL_INFO.socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.06] border border-transparent hover:border-white/[0.08] transition-all"
+              className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.06] transition-all"
               aria-label="GitHub Profile"
             >
               <GithubIcon className="w-4 h-4" />
@@ -83,14 +80,14 @@ export default function Navbar() {
               href={PERSONAL_INFO.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.06] border border-transparent hover:border-white/[0.08] transition-all"
+              className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.06] transition-all"
               aria-label="LinkedIn Profile"
             >
               <LinkedinIcon className="w-4 h-4" />
             </a>
             <a
-              href="#contact"
-              className="btn-primary inline-flex items-center gap-1.5 text-xs font-mono px-4 py-2 rounded-xl"
+              href={`mailto:${PERSONAL_INFO.email}`}
+              className="btn-primary inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-1.5 rounded-lg"
             >
               Contact
             </a>

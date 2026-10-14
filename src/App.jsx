@@ -1,67 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeaturedProjects from './components/FeaturedProjects';
-import TechnicalCaseStudies from './components/TechnicalCaseStudies';
 import TechnicalSkills from './components/TechnicalSkills';
-import EngineeringJourney from './components/EngineeringJourney';
-import EducationCertifications from './components/EducationCertifications';
-import ProjectArchive from './components/ProjectArchive';
+import Education from './components/Education';
 import PersonalEditorial from './components/PersonalEditorial';
 import Footer from './components/Footer';
-import { PROJECTS_DATA } from './data/portfolioData';
+import AssistantBot from './components/AssistantBot';
 
 export default function App() {
-  const [selectedCaseStudy, setSelectedCaseStudy] = useState(PROJECTS_DATA[0]);
-
-  const handleSelectProject = (project) => {
-    setSelectedCaseStudy(project);
-    // Smooth scroll to case studies section
-    const el = document.getElementById('case-studies');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-[#080D18] text-[#F5F8FF] font-sans selection:bg-[#54D9FF]/20 selection:text-[#54D9FF]">
-      {/* Top Fixed Navigation */}
-      <Navbar
-        onOpenCaseStudy={handleSelectProject}
-      />
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-[#E5C378]/25 selection:text-[#E5C378]">
+      {/* Sleek Fixed Navbar */}
+      <Navbar />
 
-      {/* Main Experience Stream */}
+      {/* High-Signal Content Flow (5 focused sections) */}
       <main>
-        {/* 1. Cinematic Hero with Genuine Front-facing Portrait */}
-        <Hero onExploreWork={() => {}} />
+        {/* 1. Hero: Human hook, new formal CU sitting photo */}
+        <Hero />
 
-        {/* 2. Flagship Featured Systems (DevPilot, Vaani, TaskFlow) */}
-        <FeaturedProjects onSelectCaseStudy={handleSelectProject} />
+        {/* 2. Top 3 Flagship Projects: DevPilot, Vaani, TaskFlow */}
+        <FeaturedProjects />
 
-        {/* 3. Deep Architectural Case Studies */}
-        <TechnicalCaseStudies
-          selectedProject={selectedCaseStudy}
-          onSelectProject={setSelectedCaseStudy}
-        />
-
-        {/* 4. Evidence-based Technical Skills & Architecture Toolkit */}
+        {/* 3. Tech Stack: 4-column recruiter scan grid */}
         <TechnicalSkills />
 
-        {/* 5. Continuous Node -> Edge -> Node Engineering Journey */}
-        <EngineeringJourney />
+        {/* 4. Education & Background */}
+        <Education />
 
-        {/* 6. Education Progression & Verified Certifications */}
-        <EducationCertifications />
-
-        {/* 7. Comprehensive Filterable Project Archive */}
-        <ProjectArchive onSelectProject={handleSelectProject} />
-
-        {/* 8. Personal Interests, Adventure & Mountain Photography Gallery */}
+        {/* 5. Beyond The Code: Travel, motorcycle rides & Instagram hook */}
         <PersonalEditorial />
       </main>
 
-      {/* 9. Understated Engineering Footer */}
+      {/* 6. Clean Minimal Footer */}
       <Footer />
+
+      {/* 7. Interactive Floating AI Assistant Bot */}
+      <AssistantBot />
     </div>
   );
 }
