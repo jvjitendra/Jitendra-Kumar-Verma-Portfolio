@@ -10,6 +10,7 @@
   <a href="https://github.com/jvjitendra">🐙 GitHub</a> &nbsp;·&nbsp;
   <a href="https://www.linkedin.com/in/jvjitendra">💼 LinkedIn</a> &nbsp;·&nbsp;
   <a href="mailto:JVJITENDRA.WORK@GMAIL.COM">✉️ Email</a>
+  <a href="https://jitendra-kumar-verma-portfolio.vercel.app/">🐙 Portfolio </a> &nbsp;·&nbsp;
 </p>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:2563eb,45:06b6d4,100:8b5cf6" alt="" width="100%"/>
