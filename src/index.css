@@ -2,20 +2,18 @@
 
 @theme {
   --color-canvas: #000000;
-  --color-canvas-subtle: #050507;
-  --color-canvas-card: #0A0A0E;
-  --color-canvas-glass: rgba(18, 18, 24, 0.65);
-  --color-border-glass: rgba(255, 255, 255, 0.07);
-  --color-border-glass-hover: rgba(229, 195, 120, 0.35);
-
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #D1D5DB;
-  --color-text-muted: #717684;
-
-  /* Executive Warm Titanium & Amber Glow */
-  --color-accent-gold: #E5C378;
-  --color-accent-amber: #F59E0B;
+  --color-canvas-subtle: #08080C;
+  --color-canvas-card: #0F1015;
+  --color-canvas-glass: rgba(18, 19, 26, 0.75);
   
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #E2E8F0;
+  --color-text-muted: #94A3B8;
+
+  --color-gold: #E5C378;
+  --color-gold-hover: #F0D08A;
+  --color-gold-glow: rgba(229, 195, 120, 0.4);
+
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
@@ -37,59 +35,69 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Linear / Apple style Frosted Glass Panels */
+/* Ultra-Premium Glassmorphism Panels */
 .glass-panel {
-  background: rgba(12, 12, 16, 0.65);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(15, 16, 22, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel:hover {
-  border-color: rgba(229, 195, 120, 0.25);
+  border-color: rgba(229, 195, 120, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(229, 195, 120, 0.08);
+  transform: translateY(-2px);
 }
 
 .glass-card {
-  background: rgba(18, 18, 24, 0.5);
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.25s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
 }
 
-/* Premium Button Shine & Glow */
+/* High-Impact Magnetic Buttons */
 .btn-primary {
   background: #E5C378;
   color: #000000;
   font-weight: 700;
-  box-shadow: 0 0 25px -4px rgba(229, 195, 120, 0.35);
+  border-radius: 0.75rem;
+  box-shadow: 0 0 25px -4px rgba(229, 195, 120, 0.4);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-primary:hover {
   background: #F0D08A;
-  box-shadow: 0 0 35px -2px rgba(229, 195, 120, 0.55);
-  transform: translateY(-1px);
+  box-shadow: 0 0 35px -2px rgba(229, 195, 120, 0.65);
+  transform: translateY(-1px) scale(1.02);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
+  border-radius: 0.75rem;
+  font-weight: 600;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(229, 195, 120, 0.4);
   transform: translateY(-1px);
 }
 
-/* Subtle modern scrollbar */
+/* Custom Minimal Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -97,11 +105,11 @@ body {
   background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1A1A22;
+  background: #222530;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2D2D3A;
+  background: #383E50;
 }
 
 code {

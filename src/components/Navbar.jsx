@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './BrandIcons';
+import { GithubIcon, LinkedinIcon, InstagramIcon } from './BrandIcons';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-export default function Navbar() {
+export default function Navbar({ onOpenContact }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -26,71 +26,81 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-black/85 backdrop-blur-xl border-b border-white/[0.06] py-3.5 shadow-2xl'
+          ? 'bg-black/90 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-2xl'
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] 2xl:max-w-[1560px] mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between">
           
-          {/* Logo / Full Name */}
+          {/* Logo / Full Name (Jitendra Kumar Verma) */}
           <a
             href="#"
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="Jitendra Kumar Verma Home"
           >
-            <div className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.1] flex items-center justify-center font-mono font-bold text-xs text-[#E5C378] group-hover:border-[#E5C378]/50 group-hover:scale-105 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.12] flex items-center justify-center font-mono font-bold text-sm text-[#E5C378] group-hover:border-[#E5C378]/60 group-hover:scale-105 transition-all shadow-inner">
               JV
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-bold text-sm tracking-tight text-white group-hover:text-[#E5C378] transition-colors">
+              <span className="font-bold text-base tracking-tight text-white group-hover:text-[#E5C378] transition-colors">
                 Jitendra Kumar Verma
               </span>
-              <span className="text-[10px] font-mono text-zinc-500 tracking-wider uppercase">
+              <span className="text-xs font-mono text-zinc-400 tracking-wider uppercase">
                 Software Engineer
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation - 4 clean links */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] backdrop-blur-md border border-white/[0.06] rounded-full px-3.5 py-1.5 shadow-xl">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1.5 bg-white/[0.04] backdrop-blur-md border border-white/[0.08] rounded-full px-5 py-2 shadow-xl">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs font-medium text-zinc-300 hover:text-white px-3.5 py-1.5 rounded-full hover:bg-white/[0.06] transition-all"
+                className="text-sm font-medium text-zinc-300 hover:text-white px-4 py-1.5 rounded-full hover:bg-white/[0.08] transition-all"
               >
                 {link.name}
               </a>
             ))}
           </nav>
 
-          {/* Quick Actions */}
+          {/* Quick Actions with Authentic Brand Icons */}
           <div className="hidden md:flex items-center gap-2.5">
             <a
               href={PERSONAL_INFO.socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.06] transition-all"
+              className="p-2 rounded-xl text-zinc-300 hover:text-white hover:bg-white/[0.08] border border-transparent hover:border-white/[0.1] transition-all"
               aria-label="GitHub Profile"
             >
-              <GithubIcon className="w-4 h-4" />
+              <GithubIcon className="w-[18px] h-[18px] text-white" />
             </a>
             <a
               href={PERSONAL_INFO.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.06] transition-all"
+              className="p-2 rounded-xl text-zinc-300 hover:text-[#0A66C2] hover:bg-white/[0.08] border border-transparent hover:border-white/[0.1] transition-all"
               aria-label="LinkedIn Profile"
             >
-              <LinkedinIcon className="w-4 h-4" />
+              <LinkedinIcon className="w-[18px] h-[18px] text-[#0A66C2]" />
             </a>
             <a
-              href={`mailto:${PERSONAL_INFO.email}`}
-              className="btn-primary inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-1.5 rounded-lg"
+              href={PERSONAL_INFO.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-xl text-zinc-300 hover:text-pink-400 hover:bg-white/[0.08] border border-transparent hover:border-white/[0.1] transition-all"
+              aria-label="Instagram Profile"
             >
-              Contact
+              <InstagramIcon className="w-[18px] h-[18px]" />
             </a>
+            <button
+              type="button"
+              onClick={onOpenContact}
+              className="btn-primary inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-medium px-4.5 py-2.5 ml-1"
+            >
+              Get in Touch
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,35 +119,55 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-2xl border-b border-white/[0.08] px-6 py-6 transition-all">
+        <div className="md:hidden bg-black/98 backdrop-blur-2xl border-b border-white/[0.1] px-6 py-6 transition-all">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-medium text-white hover:text-[#E5C378] py-2 border-b border-white/[0.04]"
+                className="text-base font-semibold text-white hover:text-[#E5C378] py-2 border-b border-white/[0.06]"
               >
                 {link.name}
               </a>
             ))}
-            <div className="flex items-center gap-4 pt-4">
-              <a
-                href={PERSONAL_INFO.socials.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white"
+            <div className="flex items-center justify-between pt-4">
+              <div className="flex items-center gap-4">
+                <a
+                  href={PERSONAL_INFO.socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-300 hover:text-white"
+                >
+                  <GithubIcon className="w-5 h-5 text-white" />
+                </a>
+                <a
+                  href={PERSONAL_INFO.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-300 hover:text-white"
+                >
+                  <LinkedinIcon className="w-5 h-5 text-[#0A66C2]" />
+                </a>
+                <a
+                  href={PERSONAL_INFO.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-300 hover:text-white"
+                >
+                  <InstagramIcon className="w-5 h-5" />
+                </a>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenContact();
+                }}
+                className="btn-primary text-xs px-4 py-2"
               >
-                <GithubIcon className="w-4 h-4" /> GitHub
-              </a>
-              <a
-                href={PERSONAL_INFO.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white"
-              >
-                <LinkedinIcon className="w-4 h-4" /> LinkedIn
-              </a>
+                Get in Touch
+              </button>
             </div>
           </div>
         </div>
